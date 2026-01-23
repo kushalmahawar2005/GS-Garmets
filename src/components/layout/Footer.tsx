@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                     {/* Column 1: About */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 text-primary uppercase">Global Uniforms</h3>
+                        <h3 className="text-lg font-bold mb-6 text-primary uppercase">GS Garments</h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             We are a leading manufacturer and supplier of high-quality uniforms for schools, corporates, hospitals, and industries. Dedicated to quality and timely delivery.
                         </p>
@@ -58,7 +58,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail size={18} className="text-primary flex-shrink-0" />
-                                <span>info@globaluniforms.co.in</span>
+                                <span>info@gsgarments.co.in</span>
                             </li>
                         </ul>
                     </div>
@@ -66,7 +66,7 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                    <p>© {new Date().getFullYear()} Global Uniforms. All Rights Reserved.</p>
+                    <p>© {new Date().getFullYear()} GS Garments. All Rights Reserved.</p>
                     <div className="mt-4 md:mt-0">
                         <span>Designed by <span className="text-white">CloneAgent</span></span>
                     </div>

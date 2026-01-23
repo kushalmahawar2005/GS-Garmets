@@ -9,21 +9,21 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 const slides = [
     {
         id: 1,
-        image: "https://www.globaluniforms.co.in/images/banners/school-uniform.jpg",
+        image: "/assets/images/school-uniform.jpg",
         title: "Premium School Uniforms",
         subtitle: "Comfortable, Durable & Stylish Standards",
         link: "/products/school"
     },
     {
         id: 2,
-        image: "https://www.globaluniforms.co.in/images/banners/hospital-uniform.jpg",
+        image: "/assets/images/hospital-uniform.jpg",
         title: "Professional Healthcare Attire",
         subtitle: "Hygiene, Comfort & Protection for Staff",
         link: "/products/hospital"
     },
     {
         id: 3,
-        image: "https://www.globaluniforms.co.in/images/banners/sports-uniform.jpg",
+        image: "/assets/images/sports-uniform.jpg",
         title: "High Performance Sports Wear",
         subtitle: "Designed for Champions & Athletes",
         link: "/products/industrial"
@@ -44,7 +44,7 @@ export default function PremiumHero() {
     const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="relative h-[600px] md:h-[700px] w-full overflow-hidden bg-primary">
+        <section className="relative h-[600px] md:h-[700px] w-full overflow-hidden bg-background">
             <AnimatePresence mode='wait'>
                 <motion.div
                     key={current}
@@ -60,8 +60,10 @@ export default function PremiumHero() {
                         fill
                         className="object-cover"
                         priority
+                        unoptimized
+                        quality={100}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#09090b]/90 via-[#09090b]/50 to-transparent" />
                 </motion.div>
             </AnimatePresence>
 
@@ -75,10 +77,10 @@ export default function PremiumHero() {
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-2xl">
+                            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 tracking-tight drop-shadow-2xl font-serif">
                                 {slides[current].title}
                             </h1>
-                            <p className="text-xl md:text-2xl mb-10 font-light max-w-2xl mx-auto text-gray-200">
+                            <p className="text-lg md:text-2xl mb-8 md:mb-10 font-light max-w-xl md:max-w-2xl mx-auto text-gray-200 px-4">
                                 {slides[current].subtitle}
                             </p>
 
@@ -86,7 +88,7 @@ export default function PremiumHero() {
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-accent hover:bg-accent-hover text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider shadow-lg hover:shadow-xl transition-all"
+                                    className="bg-gradient-to-r from-[#ca8a04] to-[#eab308] text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-widest shadow-xl hover:shadow-2xl transition-all border border-white/10"
                                 >
                                     Explore Collection
                                 </motion.button>
@@ -99,13 +101,13 @@ export default function PremiumHero() {
             {/* Navigation Arrows */}
             <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/20 hover:border-accent"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/10 hover:border-accent"
             >
                 <ChevronLeft size={32} />
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/20 hover:border-accent"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/10 hover:border-accent"
             >
                 <ChevronRight size={32} />
             </button>

@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 const testimonials = [
     {
         id: 1,
-        text: "Global Uniforms has been our trusted partner for over 5 years. Their quality and consistency are unmatched in the market.",
+        text: "GS Garments has been our trusted partner for over 5 years. Their quality and consistency are unmatched in the market.",
         author: "Rajesh Kumar",
         role: "Principal, DPS Delhi"
     },

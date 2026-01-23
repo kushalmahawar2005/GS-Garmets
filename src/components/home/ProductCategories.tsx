@@ -6,28 +6,28 @@ const categories = [
     {
         id: 1,
         title: "School Uniforms",
-        image: "https://www.globaluniforms.co.in/default/images/school.jpg",
+        image: "/assets/images/school.jpg",
         link: "/products/school",
         count: "50+ Products"
     },
     {
         id: 2,
         title: "Corporate Uniforms",
-        image: "https://www.globaluniforms.co.in/default/images/corporate-uniforms.jpg",
+        image: "/assets/images/corporate-uniforms.jpg",
         link: "/products/corporate",
         count: "40+ Products"
     },
     {
         id: 3,
         title: "Hospital Uniforms",
-        image: "https://www.globaluniforms.co.in/default/images/hospital.jpg",
+        image: "/assets/images/hospital.jpg",
         link: "/products/hospital",
         count: "30+ Products"
     },
     {
         id: 4,
         title: "Housekeeping",
-        image: "https://www.globaluniforms.co.in/default/images/housekeeping-uniform.jpg",
+        image: "/assets/images/housekeeping-uniform.jpg",
         link: "/products/industrial",
         count: "25+ Products"
     }
@@ -52,6 +52,8 @@ export default function ProductCategories() {
                                     alt={cat.title}
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    unoptimized
+                                    quality={100}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 

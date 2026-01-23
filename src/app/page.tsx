@@ -1,6 +1,8 @@
 import PremiumHero from "@/components/home/PremiumHero";
-import FeatureCards from "@/components/home/FeatureCards";
 import AboutSection from "@/components/home/AboutSection";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import MostSellingUniforms from "@/components/home/MostSellingUniforms";
+import AchievementsSection from "@/components/home/AchievementsSection";
 import ProductCategories from "@/components/home/ProductCategories";
 import StatsSection from "@/components/home/StatsSection";
 import Testimonials from "@/components/home/Testimonials";
@@ -11,10 +13,13 @@ export default function Home() {
   return (
     <>
       <PremiumHero />
-      <FeatureCards />
+
       <AboutSection />
+      <WhyChooseUs />
+      <MostSellingUniforms />
       <NewArrivals />
       <ProductCategories />
+      <AchievementsSection />
       <StatsSection />
       <Testimonials />
       <ContactOverview />

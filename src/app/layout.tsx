@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Heebo } from "next/font/google";
+import { Heebo, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import ContactSidebar from "@/components/ui/ContactSidebar";
 
 const heebo = Heebo({
   variable: "--font-heebo",
@@ -11,9 +12,15 @@ const heebo = Heebo({
   weight: ["400", "500", "700", "800", "900"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
-  title: "Global Uniforms - School & Corporate Uniforms",
-  description: "Global Uniforms clone",
+  title: "GS Garments - School & Corporate Uniforms",
+  description: "GS Garments Official Website",
 };
 
 export default function RootLayout({
@@ -24,13 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${heebo.variable} antialiased flex flex-col min-h-screen`}
+        className={`${heebo.variable} ${playfair.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow">
           {children}
         </main>
         <WhatsAppButton />
+        <ContactSidebar />
         <Footer />
       </body>
     </html>

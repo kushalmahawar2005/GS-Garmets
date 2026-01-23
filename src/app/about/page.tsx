@@ -1,5 +1,4 @@
 import PageHeader from "@/components/layout/PageHeader";
-import FeatureCards from "@/components/home/FeatureCards";
 import StatsSection from "@/components/home/StatsSection";
 import Testimonials from "@/components/home/Testimonials";
 import Image from "next/image";
@@ -19,7 +18,7 @@ export default function AboutPage() {
                         <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
                                 src="https://www.globaluniforms.co.in/default/images/about-us.jpg"
-                                alt="About Global Uniforms"
+                                alt="About GS Garments"
                                 fill
                                 className="object-cover"
                             />
@@ -31,7 +30,7 @@ export default function AboutPage() {
                                 Mr. Gagandeep Singh Kohli is a fantastic uniform designer, and his zest to take this passion to new heights, has helped him become an entrepreneur. Since the foundation, he has been weaving his beautiful imagination and turning it into creative and comfortable uniforms and also helped the uniform sector bloom.
                             </p>
                             <p className="text-gray-600 mb-8 leading-relaxed">
-                                At Global Uniforms, we believe that a uniform is not just a piece of clothing but a symbol of identity, unity, and professionalism. With over four decades of unparalleled experience, we have established ourselves as the premier manufacturer and supplier of high-quality uniforms across various sectors including education, healthcare, corporate, and industry.
+                                At GS Garments, we believe that a uniform is not just a piece of clothing but a symbol of identity, unity, and professionalism. With over four decades of unparalleled experience, we have established ourselves as the premier manufacturer and supplier of high-quality uniforms across various sectors including education, healthcare, corporate, and industry.
                             </p>
 
                             <div className="grid grid-cols-2 gap-6">
@@ -49,7 +48,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <FeatureCards />
             <StatsSection />
             <Testimonials />
         </>

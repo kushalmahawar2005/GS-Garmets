@@ -12,7 +12,7 @@ export default function TopBar() {
                     </div>
                     <div className="flex items-center space-x-2">
                         <Mail size={14} className="text-primary" />
-                        <span>info@globaluniforms.co.in</span>
+                        <span>info@gsgarments.co.in</span>
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
