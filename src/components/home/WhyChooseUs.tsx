@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
             <div className="container mx-auto px-4 relative z-10">
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -48,11 +48,11 @@ export default function WhyChooseUs() {
                             className="group relative"
                         >
 
-                            <div className="relative z-10 flex flex-row items-center gap-5 text-left">
+                            <div className="relative z-10 flex flex-col md:flex-row items-center gap-3 md:gap-5 text-center md:text-left">
                                 <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                                     {feature.isImage ? (
                                         <div
-                                            className="w-12 h-12 bg-[#FF5B05]"
+                                            className="w-10 h-10 md:w-12 md:h-12 bg-[#FF5B05]"
                                             style={{
                                                 maskImage: `url('${feature.icon}')`,
                                                 maskSize: 'contain',
@@ -65,16 +65,19 @@ export default function WhyChooseUs() {
                                             }}
                                         />
                                     ) : (
-                                        <feature.icon size={48} className="text-[#FF5B05]" strokeWidth={1} />
+                                        <feature.icon className="text-[#FF5B05] w-10 h-10 md:w-12 md:h-12" strokeWidth={1} />
                                     )}
                                 </div>
 
                                 <div>
-                                    <h3 className="text-lg font-[500] text-gray-900 mb-1 leading-tight !font-quicksand">
+                                    <h3 className="text-sm md:text-lg font-[500] text-gray-900 mb-1 leading-tight !font-quicksand">
                                         {feature.title}
                                     </h3>
 
-                                    <p className="text-gray-500 text-sm font-[400] leading-relaxed tracking-wide font-quicksand">
+                                    <p className="text-gray-500 text-xs md:text-sm font-[400] leading-relaxed tracking-wide font-quicksand hidden md:block">
+                                        {feature.description}
+                                    </p>
+                                    <p className="text-gray-500 text-xs font-[400] leading-tight tracking-wide font-quicksand md:hidden">
                                         {feature.description}
                                     </p>
                                 </div>

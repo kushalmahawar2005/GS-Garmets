@@ -6,7 +6,45 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/stateful-button';
 
+import { useState } from 'react';
+
 export default function ContactOverview() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus('');
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                setStatus('Query submitted successfully!');
+                setFormData({ name: '', email: '', phone: '', address: '', message: '' });
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            } else {
+                setStatus('Failed to submit. Please try again.');
+            }
+        } catch (error) {
+            setStatus('Something went wrong.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section className="py-20 bg-[#09090b] overflow-hidden">
             <div className="container mx-auto px-4">
@@ -68,36 +106,70 @@ export default function ContactOverview() {
                                     <p className="text-xs text-gray-500">Get Our Quick Assistance Now!</p>
                                 </div>
 
-                                <form className="space-y-4">
+                                <form className="space-y-4" onSubmit={handleSubmit}>
                                     <div>
                                         <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Name*</label>
-                                        <input type="text" className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600" placeholder="John Doe" />
+                                        <input
+                                            type="text"
+                                            required
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600"
+                                            placeholder="John Doe"
+                                        />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Email Us*</label>
-                                        <input type="email" className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600" placeholder="john@example.com" />
+                                        <input
+                                            type="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600"
+                                            placeholder="john@example.com"
+                                        />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Phone*</label>
-                                        <input type="tel" className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600" placeholder="+91 98765 43210" />
+                                        <input
+                                            type="tel"
+                                            required
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600"
+                                            placeholder="+91 98765 43210"
+                                        />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Address</label>
-                                        <input type="text" className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600" placeholder="City, State" />
+                                        <input
+                                            type="text"
+                                            value={formData.address}
+                                            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                                            className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all text-white placeholder-gray-600"
+                                            placeholder="City, State"
+                                        />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Message</label>
-                                        <textarea rows={3} className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all resize-none text-white placeholder-gray-600" placeholder="How can we help?"></textarea>
+                                        <textarea
+                                            rows={3}
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                            className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all resize-none text-white placeholder-gray-600"
+                                            placeholder="How can we help?"
+                                        ></textarea>
                                     </div>
 
-                                    <Button onClick={async () => {
-                                        return new Promise((resolve) => {
-                                            setTimeout(resolve, 4000);
-                                        });
-                                    }} className="w-full bg-gradient-to-r from-[#ca8a04] to-[#eab308] hover:shadow-lg hover:shadow-accent/20 text-white py-3 rounded-xl font-bold text-sm transition-all group">
-                                        <span>Submit Now</span>
-                                        <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                    <Button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gradient-to-r from-[#ca8a04] to-[#eab308] hover:shadow-lg hover:shadow-accent/20 text-white py-3 rounded-xl font-bold text-sm transition-all group"
+                                    >
+                                        <span>{isSubmitting ? 'Sending...' : 'Submit Now'}</span>
+                                        {!isSubmitting && <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />}
                                     </Button>
+                                    {status && <p className={`text-xs text-center mt-2 ${status.includes('success') ? 'text-green-500' : 'text-red-500'}`}>{status}</p>}
                                 </form>
 
                                 <div className="mt-8 text-center">

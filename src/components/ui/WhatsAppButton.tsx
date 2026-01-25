@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
             href="https://wa.me/917827402572"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-8 left-8 z-50 hover:-translate-y-1 transition-transform duration-300 group"
+            className="fixed bottom-8 right-8 z-50 hover:-translate-y-1 transition-transform duration-300 group"
         >
             <div className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
                 {/* Standard WhatsApp Icon using Lucide (cleaner) or SVG if preferred */}
@@ -25,8 +25,8 @@ export default function WhatsAppButton() {
                 </svg>
             </div>
 
-            {/* Tooltip on hover */}
-            <span className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            {/* Tooltip on hover - Adjusted to left side */}
+            <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                 Chat on WhatsApp
             </span>
         </Link>

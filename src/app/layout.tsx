@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Heebo, Playfair_Display, Quicksand } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import ContactSidebar from "@/components/ui/ContactSidebar";
+import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
 const heebo = Heebo({
   variable: "--font-heebo",
@@ -39,13 +36,7 @@ export default function RootLayout({
       <body
         className={`${heebo.variable} ${playfair.variable} ${quicksand.variable} antialiased flex flex-col min-h-screen`}
       >
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <WhatsAppButton />
-        <ContactSidebar />
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

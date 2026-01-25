@@ -8,6 +8,7 @@ import StatsSection from "@/components/home/StatsSection";
 import Testimonials from "@/components/home/Testimonials";
 import NewArrivals from "@/components/home/NewArrivals";
 import ContactOverview from "@/components/home/ContactOverview";
+import HomeMap from "@/components/home/HomeMap";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <StatsSection />
       <Testimonials />
       <ContactOverview />
+      <HomeMap />
     </>
   );
 }

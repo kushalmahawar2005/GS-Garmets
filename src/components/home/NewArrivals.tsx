@@ -39,7 +39,7 @@ export default function NewArrivals() {
                         768: { slidesPerView: 3 },
                         1024: { slidesPerView: 4 }
                     }}
-                    className="pb-4"
+                    className="pb-4 mt-8"
                 >
                     {products.map((product) => (
                         <SwiperSlide key={product.id}>

@@ -75,7 +75,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
 
                                 <div className="p-6">
                                     <div className="flex justify-between items-start mb-2">
-                                        <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-accent transition-colors">
                                             {product.name}
                                         </h3>
                                         {/* <span className="text-lg font-semibold text-gray-600">{product.price}</span> */}

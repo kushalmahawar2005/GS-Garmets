@@ -43,6 +43,14 @@ export default function PremiumHero() {
     const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
     const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
+    const handleDragEnd = (event: any, info: any) => {
+        if (info.offset.x < -100) {
+            nextSlide();
+        } else if (info.offset.x > 100) {
+            prevSlide();
+        }
+    };
+
     return (
         <section className="relative h-[600px] md:h-[700px] w-full overflow-hidden bg-background">
             <AnimatePresence mode='wait'>
@@ -52,7 +60,11 @@ export default function PremiumHero() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
-                    className="absolute inset-0"
+                    className="absolute inset-0 cursor-grab active:cursor-grabbing"
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={1}
+                    onDragEnd={handleDragEnd}
                 >
                     <Image
                         src={slides[current].image}
@@ -101,13 +113,13 @@ export default function PremiumHero() {
             {/* Navigation Arrows */}
             <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/10 hover:border-accent"
+                className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/10 hover:border-accent"
             >
                 <ChevronLeft size={32} />
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/10 hover:border-accent"
+                className="absolute hidden md:block right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-accent backdrop-blur-md p-3 rounded-full text-white transition-all border border-white/10 hover:border-accent"
             >
                 <ChevronRight size={32} />
             </button>

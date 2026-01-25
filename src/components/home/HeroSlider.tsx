@@ -58,7 +58,7 @@ export default function HeroSlider() {
                                 priority={slide.id === 1}
                                 placeholder="empty"
                             />
-                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center text-white px-4 max-w-4xl">
                                     <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg leading-tight animate-fade-in-up">
                                         {slide.title}

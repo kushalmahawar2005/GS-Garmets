@@ -6,7 +6,7 @@ export default function AboutSection() {
     return (
         <section className="pt-20 pb-12 bg-white">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
                     {/* Text Content */}
                     <div className="lg:w-1/2">
                         <h4 className="text-primary font-bold uppercase tracking-wider mb-2">Who We Are</h4>
@@ -20,7 +20,7 @@ export default function AboutSection() {
                             Our state-of-the-art manufacturing facility ensures that every garment meets the highest standards of durability, comfort, and style. We believe in building long-term relationships with our clients by providing personalized service and timely delivery.
                         </p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div className="grid grid-cols-2 gap-4 mb-8">
                             {['Premium Fabric Quality', 'Custom Designs', 'Bulk Manufacturing', 'Timely Delivery'].map((item, i) => (
                                 <div key={i} className="flex items-center space-x-2">
                                     <CheckCircle className="text-primary" size={20} />
@@ -29,7 +29,7 @@ export default function AboutSection() {
                             ))}
                         </div>
 
-                        <Link href="/about" className="inline-block bg-black border-2 border-primary text-white hover:bg-primary hover:text-black px-8 py-3 rounded-sm font-bold uppercase tracking-wider transition-colors duration-300">
+                        <Link href="/about" className="block w-max mx-auto md:mx-0 bg-black border-2 border-primary text-white hover:bg-primary hover:text-black px-8 py-3 rounded-sm font-bold uppercase tracking-wider transition-colors duration-300">
                             Read More
                         </Link>
                     </div>
