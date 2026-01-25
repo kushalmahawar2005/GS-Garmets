@@ -40,7 +40,7 @@ export default function ContactSidebar() {
                             className="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-[51] shadow-2xl flex flex-col overflow-hidden border-l border-gray-100"
                         >
                             {/* Header */}
-                            <div className="bg-primary p-6 flex items-center justify-between relative overflow-hidden">
+                            <div className="bg-gray-900 p-6 flex items-center justify-between relative overflow-hidden">
                                 {/* Decorative Gradient */}
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
 
@@ -80,7 +80,7 @@ export default function ContactSidebar() {
                                 {/* Form */}
                                 <form className="space-y-5">
                                     <div className="space-y-1">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-wider ml-1">Full Name *</label>
+                                        <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Full Name *</label>
                                         <input
                                             type="text"
                                             placeholder="Enter your name"
@@ -89,7 +89,7 @@ export default function ContactSidebar() {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-wider ml-1">Email Address *</label>
+                                        <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Email Address *</label>
                                         <input
                                             type="email"
                                             placeholder="Enter your email"
@@ -98,7 +98,7 @@ export default function ContactSidebar() {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-wider ml-1">Phone Number *</label>
+                                        <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Phone Number *</label>
                                         <input
                                             type="tel"
                                             placeholder="Enter your mobile number"
@@ -107,7 +107,7 @@ export default function ContactSidebar() {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-wider ml-1">Address</label>
+                                        <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Address</label>
                                         <input
                                             type="text"
                                             placeholder="City, State"
@@ -116,7 +116,7 @@ export default function ContactSidebar() {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-wider ml-1">Message</label>
+                                        <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Message</label>
                                         <textarea
                                             rows={4}
                                             placeholder="How can we help you?"
@@ -126,7 +126,7 @@ export default function ContactSidebar() {
 
                                     <button
                                         type="button"
-                                        className="w-full bg-primary hover:bg-primary-hover text-white py-4 rounded-lg font-bold shadow-lg shadow-primary/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group mt-4"
+                                        className="w-full bg-gray-900 hover:bg-gray-800 text-white py-4 rounded-lg font-bold shadow-lg shadow-gray-900/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group mt-4"
                                     >
                                         <span>Send Message</span>
                                         <Send size={18} className="group-hover:translate-x-1 transition-transform" />
