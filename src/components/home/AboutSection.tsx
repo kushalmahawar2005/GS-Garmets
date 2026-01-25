@@ -4,7 +4,7 @@ import { CheckCircle } from 'lucide-react';
 
 export default function AboutSection() {
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="pt-20 pb-12 bg-white">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Text Content */}
@@ -29,7 +29,7 @@ export default function AboutSection() {
                             ))}
                         </div>
 
-                        <Link href="/about" className="inline-block bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-sm font-bold uppercase tracking-wider transition-colors duration-300">
+                        <Link href="/about" className="inline-block bg-black border-2 border-primary text-white hover:bg-primary hover:text-black px-8 py-3 rounded-sm font-bold uppercase tracking-wider transition-colors duration-300">
                             Read More
                         </Link>
                     </div>

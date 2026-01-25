@@ -26,7 +26,7 @@ const categories = [
 
 export default function MostSellingUniforms() {
     return (
-        <section className="relative py-20 bg-[#18181b] overflow-hidden">
+        <section className="relative py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4 mt-8">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -38,8 +38,8 @@ export default function MostSellingUniforms() {
                     >
                         <h4 className="text-accent font-black uppercase tracking-widest text-lg">GO THROUGH</h4>
                         <div className="flex space-x-1">
-                            <div className="w-2 h-6 bg-white -skew-x-12"></div>
-                            <div className="w-2 h-6 bg-white -skew-x-12"></div>
+                            <div className="w-2 h-6 bg-black -skew-x-12"></div>
+                            <div className="w-2 h-6 bg-black -skew-x-12"></div>
                         </div>
                     </motion.div>
                     <motion.h2
@@ -47,7 +47,7 @@ export default function MostSellingUniforms() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-white mb-2 font-serif"
+                        className="text-4xl md:text-5xl font-bold text-black mb-2 font-serif"
                     >
                         Our Most Selling Uniforms
                     </motion.h2>
@@ -62,7 +62,7 @@ export default function MostSellingUniforms() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="group relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl shadow-2xl cursor-pointer border border-white/10 hover:border-accent/50 transition-colors duration-500"
+                            className="group relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl shadow-2xl cursor-pointer border border-black/10 hover:border-accent/50 transition-colors duration-500"
                         >
                             {/* Image */}
                             <Image

@@ -29,6 +29,7 @@
   --font-sans: var(--font-heebo), sans-serif;
   --font-serif: var(--font-playfair), serif;
   /* Added serif font */
+  --font-quicksand: var(--font-quicksand), sans-serif;
 }
 
 body {

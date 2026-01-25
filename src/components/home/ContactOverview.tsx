@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { Button } from '@/components/ui/stateful-button';
 
 export default function ContactOverview() {
     return (
@@ -89,10 +90,14 @@ export default function ContactOverview() {
                                         <textarea rows={3} className="w-full px-4 py-3 bg-[#18181b] rounded-xl border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm transition-all resize-none text-white placeholder-gray-600" placeholder="How can we help?"></textarea>
                                     </div>
 
-                                    <button type="button" className="w-full bg-gradient-to-r from-[#ca8a04] to-[#eab308] hover:shadow-lg hover:shadow-accent/20 text-white py-3 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 group">
+                                    <Button onClick={async () => {
+                                        return new Promise((resolve) => {
+                                            setTimeout(resolve, 4000);
+                                        });
+                                    }} className="w-full bg-gradient-to-r from-[#ca8a04] to-[#eab308] hover:shadow-lg hover:shadow-accent/20 text-white py-3 rounded-xl font-bold text-sm transition-all group">
                                         <span>Submit Now</span>
-                                        <Send size={16} className="group-hover:translate-x-1 transition-transform" />
-                                    </button>
+                                        <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </Button>
                                 </form>
 
                                 <div className="mt-8 text-center">

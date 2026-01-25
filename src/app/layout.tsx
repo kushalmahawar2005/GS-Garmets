@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Heebo, Playfair_Display } from "next/font/google";
+import { Heebo, Playfair_Display, Quicksand } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -18,6 +18,12 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "GS Garments - School & Corporate Uniforms",
   description: "GS Garments Official Website",
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${heebo.variable} ${playfair.variable} antialiased flex flex-col min-h-screen`}
+        className={`${heebo.variable} ${playfair.variable} ${quicksand.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow">

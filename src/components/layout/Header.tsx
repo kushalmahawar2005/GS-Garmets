@@ -3,14 +3,38 @@
 
 import Link from 'next/link';
 import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TopBar from './TopBar';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [show, setShow] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const controlNavbar = () => {
+            if (typeof window !== 'undefined') {
+                if (window.scrollY > lastScrollY && window.scrollY > 100) { // if scroll down hide the navbar
+                    setShow(false);
+                } else { // if scroll up show the navbar
+                    setShow(true);
+                }
+                setLastScrollY(window.scrollY);
+            }
+        };
+
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', controlNavbar);
+
+            // cleanup function
+            return () => {
+                window.removeEventListener('scroll', controlNavbar);
+            };
+        }
+    }, [lastScrollY]);
 
     return (
-        <header className="w-full shadow-2xl sticky top-0 z-50 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <header className={`w-full shadow-2xl sticky top-0 z-50 bg-[#ffffff]/80 backdrop-blur-xl border-b border-white/5 transition-transform duration-300 ${show ? 'translate-y-0' : '-translate-y-full'}`}>
             <TopBar />
 
             {/* Main Header */}
@@ -18,13 +42,13 @@ export default function Header() {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link href="/" className="flex items-center group">
-                        <span className="font-serif text-4xl font-black text-white tracking-tighter group-hover:opacity-90 transition-opacity">
+                        <span className="font-serif text-4xl font-black text-black tracking-tighter group-hover:opacity-90 transition-opacity">
                             GS <span className="text-accent italic">Garments</span>
                         </span>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-12 font-serif font-bold text-white/90 uppercase tracking-widest text-sm">
+                    <nav className="hidden lg:flex items-center space-x-12 font-quicksand font-bold text-black/90 uppercase tracking-widest text-sm">
                         <Link href="/" className="hover:text-accent transition-colors relative group">
                             Home
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -60,7 +84,7 @@ export default function Header() {
                     {/* Actions */}
                     <div className="flex items-center space-x-4">
 
-                        <Link href="/quote" className="hidden md:block bg-gradient-to-r from-[#D4AF37] to-[#B69121] text-white px-8 py-2.5 rounded-sm font-bold transition-all duration-300 uppercase text-sm tracking-widest shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:scale-105">
+                        <Link href="/quote" className="hidden md:block bg-black hover:bg-white/80  hover:text-black text-white px-8 py-2.5 rounded-sm font-bold transition-all duration-300 uppercase text-sm tracking-widest shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:scale-105">
                             Request A Quote
                         </Link>
 
