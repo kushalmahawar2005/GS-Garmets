@@ -2,6 +2,7 @@
 
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import TopBar from './TopBar';
@@ -34,11 +35,11 @@ export default function Header() {
     }, [lastScrollY]);
 
     return (
-        <header className={`w-full shadow-2xl sticky top-0 z-50 bg-[#ffffff]/80 backdrop-blur-xl border-b border-white/5 transition-transform duration-300 ${show ? 'translate-y-0' : '-translate-y-full'}`}>
+        <header className={`w-full shadow-2xl sticky top-0 z-50 bg-white border-b border-gray-100 transition-transform duration-300 ${show ? 'translate-y-0' : '-translate-y-full'}`}>
             <TopBar />
 
             {/* Main Header */}
-            <div className="container mx-auto px-6 py-6 transition-all duration-300">
+            <div className="container mx-auto px-6 py-4 transition-all duration-300">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link href="/" className="flex items-center group">
@@ -64,10 +65,10 @@ export default function Header() {
                             </span>
                             {/* Simple Megamenu Placeholder */}
                             <div className="absolute top-full left-0 w-56 bg-[#18181b] shadow-2xl rounded-sm py-2 opacity-0 group-hover:opacity-100 visible group-hover:visible transition-all duration-300 transform origin-top-left border border-white/10 mt-2 backdrop-blur-xl">
-                                <Link href="/products/school" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">School Uniforms</Link>
-                                <Link href="/products/corporate" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">Corporate Uniforms</Link>
-                                <Link href="/products/hospital" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">Hospital Uniforms</Link>
-                                <Link href="/products/industrial" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">Industrial Uniforms</Link>
+                                <Link href="/products/school" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">SCHOOL UNIFORMS</Link>
+                                <Link href="/products/corporate" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">CORPORATE UNIFORMS</Link>
+                                <Link href="/products/hospital" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">HOSPITAL UNIFORMS</Link>
+                                <Link href="/products/industrial" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">INDUSTRIAL UNIFORMS</Link>
                             </div>
                         </div>
 

@@ -16,8 +16,8 @@ export default function Home() {
       <PremiumHero />
 
       <AboutSection />
-      <WhyChooseUs />
       <MostSellingUniforms />
+      <WhyChooseUs />
       <NewArrivals />
       <ProductCategories />
       <AchievementsSection />

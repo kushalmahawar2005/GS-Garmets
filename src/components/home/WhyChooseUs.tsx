@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
                                 <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                                     {feature.isImage ? (
                                         <div
-                                            className="w-10 h-10 md:w-12 md:h-12 bg-[#FF5B05]"
+                                            className="w-10 h-10 md:w-12 md:h-12 bg-accent"
                                             style={{
                                                 maskImage: `url('${feature.icon}')`,
                                                 maskSize: 'contain',
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
                                             }}
                                         />
                                     ) : (
-                                        <feature.icon className="text-[#FF5B05] w-10 h-10 md:w-12 md:h-12" strokeWidth={1} />
+                                        <feature.icon className="text-accent w-10 h-10 md:w-12 md:h-12" strokeWidth={1} />
                                     )}
                                 </div>
 

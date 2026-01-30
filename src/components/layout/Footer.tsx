@@ -50,15 +50,15 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm text-gray-400">
                             <li className="flex items-start space-x-3">
                                 <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
-                                <span>123, Industrial Area, Phase 1, New Delhi, India - 110020</span>
+                                <span>GS Garments pipli choraha bus stand road bijainagar</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Phone size={18} className="text-primary flex-shrink-0" />
-                                <span>+91-9876543210</span>
+                                <span>+91 9001976732</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail size={18} className="text-primary flex-shrink-0" />
-                                <span>info@gsgarments.co.in</span>
+                                <span>garmentsgs15@gmail.com</span>
                             </li>
                         </ul>
                     </div>

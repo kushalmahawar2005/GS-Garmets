@@ -55,7 +55,7 @@ export default function ContactOverview() {
                         <div className="bg-[#18181b] text-white p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden group border border-white/5">
                             {/* Decorative Background Elements */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-accent/10"></div>
-                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#09090b] rounded-full blur-3xl -ml-10 -mb-10"></div>
+                            {/* Shadow removed */}
 
                             <h3 className="text-accent font-bold text-lg uppercase tracking-widest mb-2">Get In Touch</h3>
                             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
@@ -83,7 +83,7 @@ export default function ContactOverview() {
                             </div>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="bg-gradient-to-r from-[#ca8a04] to-[#eab308] text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                <button className="bg-white text-black  px-8 py-3 rounded-lg font-bold transition-all transform hover:-translate-y-1">
                                     Company Profile
                                 </button>
                                 <button className="bg-white/5 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-bold transition-all border border-white/10">
@@ -164,7 +164,7 @@ export default function ContactOverview() {
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full bg-gradient-to-r from-[#ca8a04] to-[#eab308] hover:shadow-lg hover:shadow-accent/20 text-white py-3 rounded-xl font-bold text-sm transition-all group"
+                                        className="w-full bg-white hover:bg-gray-100 text-black py-3 rounded-xl font-bold text-sm transition-all group shadow-none"
                                     >
                                         <span>{isSubmitting ? 'Sending...' : 'Submit Now'}</span>
                                         {!isSubmitting && <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />}

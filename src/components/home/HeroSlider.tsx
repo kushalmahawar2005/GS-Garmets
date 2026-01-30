@@ -13,21 +13,21 @@ import 'swiper/css/pagination';
 const slides = [
     {
         id: 1,
-        image: "https://www.globaluniforms.co.in/images/banners/school-uniform.jpg",
+        image: "/assets/images/school-uniform.jpg",
         title: "Premium School Uniforms",
         subtitle: "Comfortable, Durable & Stylish",
         link: "/products/school"
     },
     {
         id: 2,
-        image: "https://www.globaluniforms.co.in/images/banners/hospital-uniform.jpg",
+        image: "/assets/images/hospital-uniform.jpg",
         title: "Professional Healthcare Attire",
         subtitle: "Hygiene, Comfort & Protection",
         link: "/products/hospital"
     },
     {
         id: 3,
-        image: "https://www.globaluniforms.co.in/images/banners/sports-uniform.jpg",
+        image: "/assets/images/formal.png",
         title: "High Performance Sports Wear",
         subtitle: "Designed for Champions",
         link: "/products/industrial"

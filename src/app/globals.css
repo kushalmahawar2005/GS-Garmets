@@ -8,10 +8,10 @@
   --primary: #fafafa;
   /* Soft Cream for text */
   --primary-hover: #ffffff;
-  --accent: #ca8a04;
-  /* Antique Bronze */
-  --accent-hover: #eab308;
-  /* lighter gold */
+  --accent: #000000;
+  /* Black */
+  --accent-hover: #333333;
+  /* Dark Gray */
   --dark-bg: #18181b;
   /* Matte Zinc */
   --header-top: #09090b;

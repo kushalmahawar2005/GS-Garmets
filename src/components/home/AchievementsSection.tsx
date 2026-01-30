@@ -31,7 +31,7 @@ export default function AchievementsSection() {
                             viewport={{ once: true }}
                             className="text-3xl md:text-5xl font-bold mb-10 leading-tight"
                         >
-                            Our Achievements – We Are <span className="text-accent">Guinness World Records</span> Title Holder!
+                            Our Achievements – We Are <span className="text-white">Guinness World Records</span> Title Holder!
                         </motion.h2>
 
                         <div className="grid grid-cols-3 gap-4 mb-8">
@@ -85,12 +85,7 @@ export default function AchievementsSection() {
                             Your browser does not support the video tag.
                         </video>
 
-                        {/* Play Button */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 bg-accent/90 rounded-full flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(254,167,36,0.5)] group-hover:scale-110 transition-transform duration-300">
-                                <Play size={32} className="text-white fill-white" />
-                            </div>
-                        </div>
+                        {/* Play Button Removed */}
 
                         {/* Top Right Logo Overlay */}
                         <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">

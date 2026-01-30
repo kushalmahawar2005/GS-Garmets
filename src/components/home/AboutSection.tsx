@@ -9,8 +9,8 @@ export default function AboutSection() {
                 <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
                     {/* Text Content */}
                     <div className="lg:w-1/2">
-                        <h4 className="text-primary font-bold uppercase tracking-wider mb-2">Who We Are</h4>
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        <h4 className="text-black font-bold uppercase tracking-wider mb-2">Who We Are</h4>
+                        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
                             Leading Manufacturer of Premium Quality Uniforms
                         </h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
@@ -39,7 +39,7 @@ export default function AboutSection() {
                         <div className="absolute inset-0 bg-primary/10 rounded-lg transform translate-x-4 translate-y-4"></div>
                         <div className="relative h-full w-full rounded-lg overflow-hidden shadow-xl">
                             <Image
-                                src="/assets/images/school-uniform.jpg"
+                                src="/assets/images/machine.png"
                                 alt="GS Garments Factory"
                                 fill
                                 className="object-cover"
