@@ -68,7 +68,7 @@ export default function Footer() {
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
                     <p>© {new Date().getFullYear()} GS Garments. All Rights Reserved.</p>
                     <div className="mt-4 md:mt-0">
-                        <span>Designed by <span className="text-white">CloneAgent</span></span>
+                        <span>Designed by <span className="text-white">KushalMahawar</span></span>
                     </div>
                 </div>
             </div>

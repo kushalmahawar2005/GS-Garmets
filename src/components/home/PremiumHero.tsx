@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 const slides = [
     {
         id: 1,
-        image: "/assets/images/school-uniform.jpg",
+        image: "/assets/images/hero_slider_1.png",
         title: "Premium School Uniforms",
         link: "/products/school"
     },
@@ -29,7 +29,7 @@ const slides = [
 
 export default function PremiumHero() {
     return (
-        <section className="relative h-[450px] md:h-[550px] w-full bg-background group">
+        <section className="relative  h-[250px] sm:h-[350px] md:h-[550px] lg:h-[650px] w-full bg-background group">
             <Swiper
                 modules={[Pagination]}
                 spaceBetween={0}
@@ -48,9 +48,10 @@ export default function PremiumHero() {
                             src={slide.image}
                             alt={slide.title}
                             fill
-                            className="object-cover select-none"
-                            priority
+                            className="object-cover object-top select-none"
+                            priority={slide.id === 1}
                             quality={100}
+                            sizes="100vw"
                         />
                         {/* No overlay shadow/gradient here as requested */}
                     </SwiperSlide>

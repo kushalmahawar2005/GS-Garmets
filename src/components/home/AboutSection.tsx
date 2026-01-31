@@ -9,14 +9,14 @@ export default function AboutSection() {
                 <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
                     {/* Text Content */}
                     <div className="lg:w-1/2">
-                        <h4 className="text-black font-bold uppercase tracking-wider mb-2">Who We Are</h4>
-                        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+                        <h4 className="text-black font-quicksand font-semibold tracking-wider mb-2">Who We Are</h4>
+                        <h2 className="text-3xl md:text-4xl font-quicksand font-semibold text-black mb-6">
                             Leading Manufacturer of Premium Quality Uniforms
                         </h2>
-                        <p className="text-gray-600 mb-6 leading-relaxed">
+                        <p className="text-gray-600 mb-6 leading-relaxed font-quicksand tracking-wide font-medium">
                             GS Garments is a premier uniform manufacturing company based in India. We specialize in designing and manufacturing high-quality uniforms for schools, corporate offices, hospitals, hotels, and industrial sectors. With years of experience and a commitment to excellence, we have established ourselves as a trusted partner for businesses and institutions across the globe.
                         </p>
-                        <p className="text-gray-600 mb-8 leading-relaxed">
+                        <p className="text-gray-600 mb-8 leading-relaxed font-quicksand tracking-wide font-medium">
                             Our state-of-the-art manufacturing facility ensures that every garment meets the highest standards of durability, comfort, and style. We believe in building long-term relationships with our clients by providing personalized service and timely delivery.
                         </p>
 
@@ -24,7 +24,7 @@ export default function AboutSection() {
                             {['Premium Fabric Quality', 'Custom Designs', 'Bulk Manufacturing', 'Timely Delivery'].map((item, i) => (
                                 <div key={i} className="flex items-center space-x-2">
                                     <CheckCircle className="text-primary" size={20} />
-                                    <span className="font-medium text-gray-800">{item}</span>
+                                    <span className="font-semibold font-quicksand text-gray-800">{item}</span>
                                 </div>
                             ))}
                         </div>

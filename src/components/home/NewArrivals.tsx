@@ -23,8 +23,7 @@ export default function NewArrivals() {
         <section className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <span className="text-accent font-bold uppercase tracking-wider block mb-2">Trendsetters</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-black font-serif">New Arrivals</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-black font-quicksand">New Arrivals</h2>
                     <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
                 </div>
 
@@ -61,7 +60,7 @@ export default function NewArrivals() {
                                     </div>
                                 </div>
                                 <div className="p-4 text-center border-t border-white/5 bg-[#18181b]">
-                                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-accent transition-colors !font-quicksand tracking-wide">{product.name}</h3>
+                                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors font-quicksand tracking-wide">{product.name}</h3>
                                     <p className="text-sm text-gray-400 font-quicksand">Premium Quality</p>
                                 </div>
                             </div>

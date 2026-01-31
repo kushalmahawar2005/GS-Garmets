@@ -24,16 +24,16 @@ const features = [
         isImage: false
     },
     {
-        icon: Truck,
+        icon: "/assets/icons/india_icon.png" as any,
         title: "All Over India",
         description: "Guaranteed on-time dispatch and delivery pan India.",
-        isImage: false
+        isImage: true
     }
 ];
 
 export default function WhyChooseUs() {
     return (
-        <section className="pt-12 pb-16 bg-gray-50 relative overflow-hidden border-b border-gray-100">
+        <section className="pt-24 pb-16 bg-white relative overflow-hidden border-b border-gray-100">
             <div className="container mx-auto px-4 relative z-10">
 
 
@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
                                 <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                                     {feature.isImage ? (
                                         <div
-                                            className="w-10 h-10 md:w-12 md:h-12 bg-accent"
+                                            className="w-10 h-10 md:w-12 md:h-12 bg-[#FF5D08]"
                                             style={{
                                                 maskImage: `url('${feature.icon}')`,
                                                 maskSize: 'contain',
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
                                             }}
                                         />
                                     ) : (
-                                        <feature.icon className="text-accent w-10 h-10 md:w-12 md:h-12" strokeWidth={1} />
+                                        <feature.icon className="text-[#FF5D08] w-10 h-10 md:w-12 md:h-12" strokeWidth={1} />
                                     )}
                                 </div>
 

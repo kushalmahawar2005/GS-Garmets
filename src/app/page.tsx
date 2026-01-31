@@ -1,4 +1,5 @@
 import PremiumHero from "@/components/home/PremiumHero";
+import FeaturedImages from "@/components/home/FeaturedImages";
 import AboutSection from "@/components/home/AboutSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import MostSellingUniforms from "@/components/home/MostSellingUniforms";
@@ -14,10 +15,11 @@ export default function Home() {
   return (
     <>
       <PremiumHero />
+      <WhyChooseUs />
 
+      <FeaturedImages />
       <AboutSection />
       <MostSellingUniforms />
-      <WhyChooseUs />
       <NewArrivals />
       <ProductCategories />
       <AchievementsSection />

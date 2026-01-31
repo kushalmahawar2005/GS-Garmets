@@ -39,17 +39,10 @@ export default function Header() {
             <TopBar />
 
             {/* Main Header */}
-            <div className="container mx-auto px-6 py-4 transition-all duration-300">
-                <div className="flex justify-between items-center">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center group">
-                        <span className="font-serif text-4xl font-black text-black tracking-tighter group-hover:opacity-90 transition-opacity">
-                            GS <span className="text-accent italic">Garments</span>
-                        </span>
-                    </Link>
-
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-12 font-quicksand font-bold text-black/90 uppercase tracking-widest text-sm">
+            <div className="container mx-auto px-6 py-6 transition-all duration-300">
+                <div className={`flex justify-between items-center relative transition-all duration-700 delay-200 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+                    {/* Desktop Navigation (Left) */}
+                    <nav className="hidden lg:flex items-center space-x-8 font-quicksand font-medium text-black/90 uppercase tracking-widest text-sm">
                         <Link href="/" className="hover:text-accent transition-colors relative group">
                             Home
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -64,28 +57,31 @@ export default function Header() {
                                 Products <ChevronDown size={16} className="ml-1" />
                             </span>
                             {/* Simple Megamenu Placeholder */}
-                            <div className="absolute top-full left-0 w-56 bg-[#18181b] shadow-2xl rounded-sm py-2 opacity-0 group-hover:opacity-100 visible group-hover:visible transition-all duration-300 transform origin-top-left border border-white/10 mt-2 backdrop-blur-xl">
-                                <Link href="/products/school" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">SCHOOL UNIFORMS</Link>
-                                <Link href="/products/corporate" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">CORPORATE UNIFORMS</Link>
-                                <Link href="/products/hospital" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">HOSPITAL UNIFORMS</Link>
-                                <Link href="/products/industrial" className="block px-6 py-3 hover:bg-white/5 hover:text-accent text-sm transition-colors border-b border-white/5 last:border-0 text-white/90">INDUSTRIAL UNIFORMS</Link>
+                            <div className="absolute top-full left-0 w-56 bg-white shadow-2xl rounded-sm py-2 opacity-0 group-hover:opacity-100 visible group-hover:visible transition-all duration-300 transform origin-top-left border border-gray-100 mt-2">
+                                <Link href="/products/school" className="block px-6 py-3 hover:bg-gray-50 text-black font-quicksand font-medium text-sm transition-colors border-b border-black/10 last:border-0">SCHOOL UNIFORMS</Link>
+                                <Link href="/products/corporate" className="block px-6 py-3 hover:bg-gray-50 text-black font-quicksand font-medium text-sm transition-colors border-b border-black/10 last:border-0">CORPORATE UNIFORMS</Link>
+                                <Link href="/products/hospital" className="block px-6 py-3 hover:bg-gray-50 text-black font-quicksand font-medium text-sm transition-colors border-b border-black/10 last:border-0">HOSPITAL UNIFORMS</Link>
+                                <Link href="/products/industrial" className="block px-6 py-3 hover:bg-gray-50 text-black font-quicksand font-medium text-sm transition-colors border-b border-black/10 last:border-0">INDUSTRIAL UNIFORMS</Link>
                             </div>
                         </div>
 
-                        <Link href="/catalogue" className="hover:text-accent transition-colors relative group">
-                            E-Catalogue
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
                         <Link href="/contact" className="hover:text-accent transition-colors relative group">
                             Contact Us
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                     </nav>
 
-                    {/* Actions */}
-                    <div className="flex items-center space-x-4">
+                    {/* Logo (Center) */}
+                    <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center group">
+                        <span className="font-serif text-4xl font-black text-black tracking-tighter group-hover:opacity-90 transition-opacity">
+                            GS <span className="text-accent italic">Garments</span>
+                        </span>
+                    </Link>
 
-                        <Link href="/quote" className="hidden md:block bg-black hover:bg-white/80  hover:text-black text-white px-8 py-2.5 rounded-sm font-bold transition-all duration-300 uppercase text-sm tracking-widest shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:scale-105">
+                    {/* Actions (Right) */}
+                    <div className="flex items-center space-x-4 ml-auto">
+
+                        <Link href="/quote" className="hidden transition-all duration-300  tracking-wider md:block bg-white hover:bg-black/80 border border-black hover:text-white text-black px-4 py-2 rounded-sm font-medium font-quicksand transition-all duration-300  text-sm tracking-widest shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:scale-105">
                             Request A Quote
                         </Link>
 
