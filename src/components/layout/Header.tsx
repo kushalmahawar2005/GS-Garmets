@@ -73,9 +73,14 @@ export default function Header() {
 
                     {/* Logo (Center) */}
                     <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center group">
-                        <span className="font-serif text-4xl font-black text-black tracking-tighter group-hover:opacity-90 transition-opacity">
-                            GS <span className="text-accent italic">Garments</span>
-                        </span>
+                        <Image
+                            src="/assets/images/final-logo.png"
+                            alt="GS Garments Logo"
+                            width={300}
+                            height={120}
+                            className="h-20 w-auto object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Actions (Right) */}
