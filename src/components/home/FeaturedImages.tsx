@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function FeaturedImages() {
     return (
-        <section className="w-full bg-white pb-12">
+        <section className="w-full bg-white pt-24 pb-16">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {/* Image 1 */}

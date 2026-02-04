@@ -16,7 +16,7 @@ export default function StatsSection() {
     ];
 
     return (
-        <section className="py-16 bg-accent text-primary border-t border-primary/10 overflow-hidden mt-2">
+        <section className="py-16 bg-[#243037] mt-10 text-primary border-t border-primary/10 overflow-hidden mt-2">
             <div className="w-full">
                 <motion.div
                     className="flex space-x-20 md:space-x-32 w-max"

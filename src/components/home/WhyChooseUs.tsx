@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
             <div className="container mx-auto px-4 relative z-10">
 
 
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
+                <div className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide snap-x px-2">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -45,14 +45,14 @@ export default function WhyChooseUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="group relative"
+                            className="group relative flex-shrink-0 min-w-[85%] sm:min-w-[60%] md:min-w-0 snap-center first:pl-2 last:pr-2"
                         >
 
-                            <div className="relative z-10 flex flex-col md:flex-row items-center gap-3 md:gap-5 text-center md:text-left">
+                            <div className="relative z-10 flex flex-row items-center gap-4 text-left h-full">
                                 <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                                     {feature.isImage ? (
                                         <div
-                                            className="w-10 h-10 md:w-12 md:h-12 bg-[#FF5D08]"
+                                            className="w-12 h-12 bg-[#FF5D08]"
                                             style={{
                                                 maskImage: `url('${feature.icon}')`,
                                                 maskSize: 'contain',
@@ -65,23 +65,25 @@ export default function WhyChooseUs() {
                                             }}
                                         />
                                     ) : (
-                                        <feature.icon className="text-[#FF5D08] w-10 h-10 md:w-12 md:h-12" strokeWidth={1} />
+                                        <feature.icon className="text-[#FF5D08] w-12 h-12" strokeWidth={1} />
                                     )}
                                 </div>
 
                                 <div>
-                                    <h3 className="text-sm md:text-lg font-[500] text-gray-900 mb-1 leading-tight !font-quicksand">
+                                    <h3 className="text-base md:text-lg font-[600] text-gray-900 mb-1 leading-tight !font-quicksand whitespace-nowrap">
                                         {feature.title}
                                     </h3>
 
-                                    <p className="text-gray-500 text-xs md:text-sm font-[400] leading-relaxed tracking-wide font-quicksand hidden md:block">
-                                        {feature.description}
-                                    </p>
-                                    <p className="text-gray-500 text-xs font-[400] leading-tight tracking-wide font-quicksand md:hidden">
+                                    <p className="text-gray-500 text-sm font-[400] leading-relaxed tracking-wide font-quicksand block">
                                         {feature.description}
                                     </p>
                                 </div>
                             </div>
+
+                            {/* Mobile Divider (Except last item) */}
+                            {index !== features.length - 1 && (
+                                <div className="absolute right-[-0.75rem] top-1/2 -translate-y-1/2 h-8 w-[1px] bg-gray-200 md:hidden block"></div>
+                            )}
                         </motion.div>
                     ))}
                 </div>

@@ -6,24 +6,25 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-{
-    id: 1,
+const slides = [
+    {
+        id: 1,
         image: "/assets/images/school-uniform.jpg",
-            title: "Premium School Uniforms",
-                link: "/products/school"
-},
-{
-    id: 2,
+        title: "Premium School Uniforms",
+        link: "/products/school"
+    },
+    {
+        id: 2,
         image: "/assets/images/header_hospital.jpg",
-            title: "Professional Healthcare Attire",
-                link: "/products/hospital"
-},
-{
-    id: 3,
+        title: "Professional Healthcare Attire",
+        link: "/products/hospital"
+    },
+    {
+        id: 3,
         image: "/assets/images/sports-uniform.jpg",
-            title: "High Performance Sports Wear",
-                link: "/products/industrial"
-}
+        title: "High Performance Sports Wear",
+        link: "/products/industrial"
+    }
 ];
 
 export default function PremiumHero() {

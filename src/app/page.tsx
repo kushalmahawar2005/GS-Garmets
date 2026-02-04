@@ -15,9 +15,8 @@ export default function Home() {
   return (
     <>
       <PremiumHero />
-      <WhyChooseUs />
-
       <FeaturedImages />
+      <WhyChooseUs />
       <AboutSection />
       <MostSellingUniforms />
       <NewArrivals />

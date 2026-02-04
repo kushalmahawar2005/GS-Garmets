@@ -74,11 +74,11 @@ export default function Header() {
                     {/* Logo (Center) */}
                     <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center group">
                         <Image
-                            src="/assets/images/final-logo.png"
+                            src="/assets/images/final-log.png"
                             alt="GS Garments Logo"
-                            width={300}
-                            height={120}
-                            className="h-20 w-auto object-contain"
+                            width={350}
+                            height={140}
+                            className="h-22 w-auto object-contain mix-blend-multiply"
                             priority
                         />
                     </Link>
@@ -92,7 +92,7 @@ export default function Header() {
 
                         {/* Mobile Menu Button */}
                         <button
-                            className="lg:hidden p-2"
+                            className="lg:hidden p-2 text-black"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                         >
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
