@@ -3,12 +3,14 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
+import { ShoppingCart, Menu, X, ChevronDown, AlignRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import TopBar from './TopBar';
+import ContactModal from './ContactModal';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -39,10 +41,10 @@ export default function Header() {
             <TopBar />
 
             {/* Main Header */}
-            <div className="container mx-auto px-6 py-6 transition-all duration-300">
+            <div className="container mx-auto px-6 py-8 transition-all duration-300">
                 <div className={`flex justify-between items-center relative transition-all duration-700 delay-200 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
                     {/* Desktop Navigation (Left) */}
-                    <nav className="hidden lg:flex items-center space-x-8 font-quicksand font-medium text-black/90 uppercase tracking-widest text-sm">
+                    <nav className="hidden lg:flex items-center space-x-8 font-quicksand font-semibold text-black/90 uppercase tracking-widest text-sm">
                         <Link href="/" className="hover:text-accent transition-colors relative group">
                             Home
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -77,7 +79,7 @@ export default function Header() {
                             src="/assets/images/final-log.png"
                             alt="GS Garments Logo"
                             width={350}
-                            height={140}
+                            height={160}
                             className="h-22 w-auto object-contain mix-blend-multiply"
                             priority
                         />
@@ -86,9 +88,18 @@ export default function Header() {
                     {/* Actions (Right) */}
                     <div className="flex items-center space-x-4 ml-auto">
 
-                        <Link href="/quote" className="hidden transition-all duration-300  tracking-wider md:block bg-white hover:bg-black/80 border border-black hover:text-white text-black px-4 py-2 rounded-sm font-medium font-quicksand transition-all duration-300  text-sm tracking-widest shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:scale-105">
-                            Request A Quote
-                        </Link>
+
+
+                        {/* Contact Toggle Button (Desktop) */}
+                        <button
+                            className="hidden lg:block p-2 text-black hover:text-accent transition-colors transform hover:scale-110 duration-300"
+                            onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsContactModalOpen(true);
+                            }}
+                        >
+                            <Menu size={32} strokeWidth={1.5} />
+                        </button>
 
                         {/* Mobile Menu Button */}
                         <button
@@ -100,6 +111,8 @@ export default function Header() {
                     </div>
                 </div>
             </div>
+
+            <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
 
             {/* Mobile Menu Overlay */}
             {isMenuOpen && (
