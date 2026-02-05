@@ -14,10 +14,10 @@ export default function AboutSection() {
                             Leading Manufacturer of Premium Quality Uniforms
                         </h2>
                         <p className="text-gray-600 mb-6 leading-relaxed font-quicksand tracking-wide font-medium">
-                            GS Garments is a premier uniform manufacturing company based in India. We specialize in designing and manufacturing high-quality uniforms for schools, corporate offices, hospitals, hotels, and industrial sectors. With years of experience and a commitment to excellence, we have established ourselves as a trusted partner for businesses and institutions across the globe.
+                            <span className="font-bold">GS Garments</span> is a premier uniform manufacturing company based in India. We specialize in designing and manufacturing high-quality uniforms for <span className="font-bold">schools, corporate offices, hospitals, hotels, and industrial sectors</span>. With years of experience and a commitment to excellence, we have established ourselves as a trusted partner for businesses and institutions across the globe.
                         </p>
                         <p className="text-gray-600 mb-8 leading-relaxed font-quicksand tracking-wide font-medium">
-                            Our state-of-the-art manufacturing facility ensures that every garment meets the highest standards of durability, comfort, and style. We believe in building long-term relationships with our clients by providing personalized service and timely delivery.
+                            Our state-of-the-art manufacturing facility ensures that every garment meets the highest standards of durability, comfort, and style. <span className="text-[#2980B9]">We believe in building long-term relationships with our clients by providing personalized service and timely delivery.</span>
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-8">
