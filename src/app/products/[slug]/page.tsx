@@ -12,6 +12,9 @@ const getCategoryDetails = (slug: string) => {
         case 'corporate': return { title: "Corporate Uniforms", subtitle: "Professional Attire for the Modern Workplace" };
         case 'hospital': return { title: "Hospital Uniforms", subtitle: "Hygienic Scrub Suits, Lab Coats & Patient Wear" };
         case 'industrial': return { title: "Industrial Uniforms", subtitle: "Safety Wear & Heavy Duty Work Clothes" };
+        case 'sports': return { title: "Sports Uniforms", subtitle: "High Performance Activewear & Team Jerseys" };
+        case 'housekeeping': return { title: "Housekeeping Uniforms", subtitle: "Comfortable Staff Uniforms & Aprons" };
+        case 'security': return { title: "Security Uniforms", subtitle: "Professional Guard Uniforms & Accessories" };
         default: return null;
     }
 };

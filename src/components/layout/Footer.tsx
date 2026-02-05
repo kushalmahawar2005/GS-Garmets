@@ -24,11 +24,11 @@ export default function Footer() {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-white uppercase">Our Products</h3>
                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li><Link href="#" className="hover:text-primary transition-colors">School Uniforms</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Corporate Uniforms</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Sports Uniforms</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Housekeeping Uniforms</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Security Uniforms</Link></li>
+                            <li><Link href="/products/school" className="hover:text-primary transition-colors">School Uniforms</Link></li>
+                            <li><Link href="/products/corporate" className="hover:text-primary transition-colors">Corporate Uniforms</Link></li>
+                            <li><Link href="/products/sports" className="hover:text-primary transition-colors">Sports Uniforms</Link></li>
+                            <li><Link href="/products/housekeeping" className="hover:text-primary transition-colors">Housekeeping Uniforms</Link></li>
+                            <li><Link href="/products/security" className="hover:text-primary transition-colors">Security Uniforms</Link></li>
                         </ul>
                     </div>
 
@@ -36,11 +36,11 @@ export default function Footer() {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-white uppercase">Useful Links</h3>
                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li><Link href="#" className="hover:text-primary transition-colors">About Us</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Our Clients</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">E-Catalogue</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-                            <li><Link href="#" className="hover:text-primary transition-colors">Contact Us</Link></li>
+                            <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                            <li><Link href="/about" className="hover:text-primary transition-colors">Our Clients</Link></li>
+                            <li><Link href="/catalogue" className="hover:text-primary transition-colors">E-Catalogue</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 

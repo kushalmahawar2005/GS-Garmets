@@ -22,7 +22,7 @@ export default function NewArrivals() {
                 }}
             ></div>
 
-            <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
+            <div className="container mx-auto px-4 pt-12 pb-32 md:py-60 relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24 mb-24">
 
                     {/* Left Side: Main Headlines */}
@@ -66,7 +66,7 @@ export default function NewArrivals() {
                         </p>
 
                         <Link
-                            href="/products"
+                            href="/catalogue"
                             className="inline-flex items-center group relative overflow-hidden bg-black text-white px-8 py-4 font-bold tracking-widest uppercase text-sm border-r-4 border-white transition-all duration-300 hover:bg-gray-900 hover:border-accent"
                         >
                             <span className="relative z-10 group-hover:text-accent transition-colors duration-300">More Products</span>
@@ -75,7 +75,7 @@ export default function NewArrivals() {
                 </div>
 
                 {/* Bottom Product Images */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 translate-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 translate-y-6 md:translate-y-12">
                     {products.map((product, index) => (
                         <motion.div
                             key={product.id}
