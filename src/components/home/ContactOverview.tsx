@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/stateful-button';
 
@@ -83,9 +84,11 @@ export default function ContactOverview() {
                             </div>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="bg-white text-black  px-8 py-3 rounded-lg font-bold transition-all transform hover:-translate-y-1">
-                                    Company Profile
-                                </button>
+                                <Link href="/company-profile">
+                                    <button className="bg-white text-black  px-8 py-3 rounded-lg font-bold transition-all transform hover:-translate-y-1">
+                                        Company Profile
+                                    </button>
+                                </Link>
                                 <button className="bg-white/5 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-bold transition-all border border-white/10">
                                     Contact Us
                                 </button>

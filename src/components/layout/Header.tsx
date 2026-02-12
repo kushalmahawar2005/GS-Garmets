@@ -118,17 +118,17 @@ export default function Header() {
             {isMenuOpen && (
                 <div className="lg:hidden bg-[#09090b] border-t border-white/10 absolute w-full left-0 top-full shadow-2xl h-screen overflow-y-auto pb-20 backdrop-blur-xl">
                     <div className="flex flex-col p-6 space-y-6 font-medium">
-                        <Link href="/" className="border-b border-white/10 pb-4 text-white hover:text-accent transition-colors">Home</Link>
-                        <Link href="/about" className="border-b border-white/10 pb-4 text-white hover:text-accent transition-colors">About Us</Link>
+                        <Link href="/" onClick={() => setIsMenuOpen(false)} className="border-b border-white/10 pb-4 text-white hover:text-accent transition-colors">Home</Link>
+                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className="border-b border-white/10 pb-4 text-white hover:text-accent transition-colors">About Us</Link>
                         <div className="border-b border-white/10 pb-4">
                             <span className="block mb-4 text-gray-400 text-sm uppercase tracking-widest">Products</span>
-                            <Link href="/products/school" className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">School Uniforms</Link>
-                            <Link href="/products/corporate" className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">Corporate Uniforms</Link>
-                            <Link href="/products/hospital" className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">Hospital Uniforms</Link>
-                            <Link href="/products/industrial" className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">Industrial Uniforms</Link>
+                            <Link href="/products/school" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">School Uniforms</Link>
+                            <Link href="/products/corporate" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">Corporate Uniforms</Link>
+                            <Link href="/products/hospital" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">Hospital Uniforms</Link>
+                            <Link href="/products/industrial" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-white/90 hover:text-accent transition-colors">Industrial Uniforms</Link>
                         </div>
-                        <Link href="/contact" className="border-b border-white/10 pb-4 text-white hover:text-accent transition-colors">Contact Us</Link>
-                        <Link href="/quote" className="bg-gradient-to-r from-[#ca8a04] to-[#eab308] text-white text-center py-3 rounded-lg mt-4 font-bold uppercase tracking-widest shadow-lg">Request Quote</Link>
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="border-b border-white/10 pb-4 text-white hover:text-accent transition-colors">Contact Us</Link>
+                        <Link href="/quote" onClick={() => setIsMenuOpen(false)} className="bg-gradient-to-r from-[#ca8a04] to-[#eab308] text-white text-center py-3 rounded-lg mt-4 font-bold uppercase tracking-widest shadow-lg">Request Quote</Link>
                     </div>
                 </div>
             )}
