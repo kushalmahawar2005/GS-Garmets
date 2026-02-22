@@ -10,7 +10,7 @@ export default function AchievementsSection() {
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2069&auto=format&fit=crop"
+                    src="/assets/images/t1.jpeg"
                     alt="Background"
                     fill
                     className="object-cover opacity-5"
@@ -46,7 +46,7 @@ export default function AchievementsSection() {
                                 >
                                     {/* Placeholders for the specific record images */}
                                     <Image
-                                        src={`/assets/images/light-room${item === 1 ? '' : item === 2 ? '-2' : '-3'}.jpg`}
+                                        src={`/assets/images/t${item}.jpeg`}
                                         alt="Achievement Thumbnail"
                                         fill
                                         className="object-cover"
@@ -78,10 +78,10 @@ export default function AchievementsSection() {
                         {/* Video Thumbnail */}
                         <video
                             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-                            poster="/assets/images/video-img.jpg"
+                            poster="/assets/images/t1.jpeg"
                             controls
                         >
-                            <source src="/assets/images/globaluniforms-video.mp4" type="video/mp4" />
+                            <source src="/assets/images/video.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
 
