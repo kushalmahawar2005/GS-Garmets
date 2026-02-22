@@ -19,6 +19,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         message: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState('');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -30,11 +32,33 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form submitted:', formData);
-        onClose();
+        setIsSubmitting(true);
+        setStatus('');
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                setStatus('Your message has been sent successfully!');
+                setFormData({ name: '', email: '', phone: '', address: '', message: '' });
+                setTimeout(() => {
+                    onClose();
+                    setStatus('');
+                }, 2000);
+            } else {
+                setStatus('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            setStatus('Something went wrong.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (!mounted) return null;
@@ -137,13 +161,20 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         />
                                     </div>
 
-                                    <div className="pt-4">
+                                    <div className="pt-4 flex flex-col items-start">
                                         <button
                                             type="submit"
-                                            className="bg-[#1a237e] text-white px-10 py-4 text-sm font-bold tracking-[0.2em] uppercase hover:bg-[#283593] transition-all hover:shadow-xl shadow-lg transform hover:-translate-y-1"
+                                            disabled={isSubmitting}
+                                            className={`${isSubmitting ? 'bg-gray-400' : 'bg-[#1a237e] hover:bg-[#283593] hover:shadow-xl hover:-translate-y-1'} text-white px-10 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all shadow-lg transform`}
                                         >
-                                            Submit Now
+                                            {isSubmitting ? 'Submitting...' : 'Submit Now'}
                                         </button>
+
+                                        {status && (
+                                            <div className={`mt-4 w-full p-3 text-sm font-semibold rounded ${status.includes('successfully') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                                                {status}
+                                            </div>
+                                        )}
                                     </div>
                                 </form>
                             </div>

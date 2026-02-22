@@ -7,6 +7,45 @@ import { MoreVertical, X, Send, Phone, Mail, MapPin } from 'lucide-react';
 export default function ContactSidebar() {
     const [isOpen, setIsOpen] = useState(false);
 
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus('');
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                setStatus('Your message has been sent successfully!');
+                setFormData({ name: '', email: '', phone: '', address: '', message: '' });
+                setTimeout(() => {
+                    setIsOpen(false);
+                    setStatus('');
+                }, 2000);
+            } else {
+                setStatus('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            setStatus('Something went wrong.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <>
             {/* Trigger Button - Floating Side Button */}
@@ -78,11 +117,14 @@ export default function ContactSidebar() {
                                 </div>
 
                                 {/* Form */}
-                                <form className="space-y-5">
+                                <form className="space-y-5" onSubmit={handleSubmit}>
                                     <div className="space-y-1">
                                         <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Full Name *</label>
                                         <input
                                             type="text"
+                                            required
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             placeholder="Enter your name"
                                             className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
@@ -92,6 +134,9 @@ export default function ContactSidebar() {
                                         <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Email Address *</label>
                                         <input
                                             type="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             placeholder="Enter your email"
                                             className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
@@ -101,6 +146,9 @@ export default function ContactSidebar() {
                                         <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Phone Number *</label>
                                         <input
                                             type="tel"
+                                            required
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                             placeholder="Enter your mobile number"
                                             className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
@@ -110,6 +158,8 @@ export default function ContactSidebar() {
                                         <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Address</label>
                                         <input
                                             type="text"
+                                            value={formData.address}
+                                            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                                             placeholder="City, State"
                                             className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
@@ -119,18 +169,27 @@ export default function ContactSidebar() {
                                         <label className="text-xs font-bold text-gray-700 uppercase tracking-wider ml-1">Message</label>
                                         <textarea
                                             rows={4}
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                             placeholder="How can we help you?"
                                             className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm resize-none"
                                         ></textarea>
                                     </div>
 
                                     <button
-                                        type="button"
-                                        className="w-full bg-gray-900 hover:bg-gray-800 text-white py-4 rounded-lg font-bold shadow-lg shadow-gray-900/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group mt-4"
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className={`w-full ${isSubmitting ? 'bg-gray-400' : 'bg-gray-900 hover:bg-gray-800'} text-white py-4 rounded-lg font-bold shadow-lg shadow-gray-900/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group mt-4`}
                                     >
-                                        <span>Send Message</span>
-                                        <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                                        {!isSubmitting && <Send size={18} className="group-hover:translate-x-1 transition-transform" />}
                                     </button>
+
+                                    {status && (
+                                        <div className={`mt-4 p-3 rounded-lg font-medium text-center text-sm ${status.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                                            {status}
+                                        </div>
+                                    )}
                                 </form>
                             </div>
 
