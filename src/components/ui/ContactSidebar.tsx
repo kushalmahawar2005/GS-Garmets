@@ -84,7 +84,7 @@ export default function ContactSidebar() {
                                         <input
                                             type="text"
                                             placeholder="Enter your name"
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400 text-sm"
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
                                     </div>
 
@@ -93,7 +93,7 @@ export default function ContactSidebar() {
                                         <input
                                             type="email"
                                             placeholder="Enter your email"
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400 text-sm"
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
                                     </div>
 
@@ -102,7 +102,7 @@ export default function ContactSidebar() {
                                         <input
                                             type="tel"
                                             placeholder="Enter your mobile number"
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400 text-sm"
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
                                     </div>
 
@@ -111,7 +111,7 @@ export default function ContactSidebar() {
                                         <input
                                             type="text"
                                             placeholder="City, State"
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400 text-sm"
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm"
                                         />
                                     </div>
 
@@ -120,7 +120,7 @@ export default function ContactSidebar() {
                                         <textarea
                                             rows={4}
                                             placeholder="How can we help you?"
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400 text-sm resize-none"
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-gray-900 placeholder:text-gray-400 text-sm resize-none"
                                         ></textarea>
                                     </div>
 
