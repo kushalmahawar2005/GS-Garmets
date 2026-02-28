@@ -6,28 +6,28 @@ const categories = [
     {
         id: 1,
         title: "School Uniforms",
-        image: "/assets/images/school.jpg",
+        image: "/assets/images/school.png",
         link: "/products/school",
         count: "50+ Products"
     },
     {
         id: 2,
         title: "Corporate Uniforms",
-        image: "/assets/images/corporate-uniforms.jpg",
+        image: "/assets/images/corporate.png",
         link: "/products/corporate",
         count: "40+ Products"
     },
     {
         id: 3,
         title: "Hospital Uniforms",
-        image: "/assets/images/hospital.jpg",
+        image: "/assets/images/hospital.png",
         link: "/products/hospital",
         count: "30+ Products"
     },
     {
         id: 4,
-        title: "Housekeeping",
-        image: "/assets/images/housekeeping-uniform.jpg",
+        title: "Industrial Uniforms",
+        image: "/assets/images/industrial.png",
         link: "/products/industrial",
         count: "25+ Products"
     }

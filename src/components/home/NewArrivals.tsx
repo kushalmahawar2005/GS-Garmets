@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
 const products = [
-    { id: 1, image: "/assets/images/nurse-uniform.jpg", alt: "Nurse Uniform" },
-    { id: 2, image: "/assets/images/corporate-uniforms.jpg", alt: "Corporate Uniform" },
-    { id: 3, image: "/assets/images/lab-coat.jpg", alt: "Lab Coat" }
+    { id: 1, image: "/assets/images/nurse.png", alt: "Nurse Uniform" },
+    { id: 2, image: "/assets/images/corporatee.png", alt: "Corporate Uniform" },
+    { id: 3, image: "/assets/images/lab.png", alt: "Lab Coat" }
 ];
 
 export default function NewArrivals() {
