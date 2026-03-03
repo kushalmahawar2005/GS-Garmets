@@ -1,4 +1,5 @@
 import PremiumHero from "@/components/home/PremiumHero";
+import FormalCollection from "@/components/home/FormalCollection";
 import FeaturedImages from "@/components/home/FeaturedImages";
 import AboutSection from "@/components/home/AboutSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <PremiumHero />
+      <FormalCollection />
       <AboutSection />
       <IndustryMarquee />
       <CoreFeatures />

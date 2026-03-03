@@ -76,11 +76,11 @@ export default function Header() {
                     {/* Logo (Center) */}
                     <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center group">
                         <Image
-                            src="/assets/images/final-log.png"
+                            src="/assets/images/final-log-transparent.png"
                             alt="GS Garments Logo"
-                            width={350}
-                            height={160}
-                            className="h-22 w-auto object-contain mix-blend-multiply"
+                            width={360}
+                            height={170}
+                            className="h-[98px] w-auto object-contain"
                             priority
                         />
                     </Link>
