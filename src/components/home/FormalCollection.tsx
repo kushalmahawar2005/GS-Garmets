@@ -84,8 +84,8 @@ const itemVariants: Variants = {
 export default function FormalCollection() {
     const [showAll, setShowAll] = useState(false);
 
-    // Show only 6 items initially, or all if showAll is true
-    const visibleProducts = showAll ? formalProducts : formalProducts.slice(0, 6);
+    // Show only 4 items initially, or all if showAll is true
+    const visibleProducts = showAll ? formalProducts : formalProducts.slice(0, 4);
 
     return (
         <section className="py-20 md:py-28 bg-[#fafafa] font-quicksand relative overflow-hidden">
@@ -141,7 +141,7 @@ export default function FormalCollection() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+                    className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10"
                 >
                     {visibleProducts.map((product) => (
                         <motion.div
@@ -150,35 +150,38 @@ export default function FormalCollection() {
                             className="group cursor-pointer"
                         >
                             {/* Image Container */}
-                            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden mb-6 bg-white">
+                            <div className="relative h-[220px] sm:h-[300px] md:h-[400px] w-full rounded-xl md:rounded-2xl overflow-hidden mb-3 md:mb-6 bg-white shadow-sm border border-gray-100">
                                 <Image
                                     src={product.image}
                                     alt={product.title}
                                     fill
-                                    className="object-contain object-center transition-transform duration-700 ease-in-out group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    className="object-contain object-center transition-transform duration-700 ease-in-out group-hover:scale-105 p-2 md:p-4"
+                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                 />
 
                                 {/* Hover overlay for tags or actions */}
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
-                                        <ShoppingBag className="w-4 h-4 text-[#0E1F74]" />
-                                        <span className="text-sm font-semibold text-[#0E1F74] uppercase tracking-wider">
+                                    <div className="bg-white/90 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-1 md:gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                                        <ShoppingBag className="w-3 h-3 md:w-4 md:h-4 text-[#0E1F74]" />
+                                        <span className="text-[10px] md:text-sm font-semibold text-[#0E1F74] uppercase tracking-wider hidden sm:inline-block">
                                             Inquire Now
+                                        </span>
+                                        <span className="text-[10px] md:text-sm font-semibold text-[#0E1F74] uppercase tracking-wider sm:hidden">
+                                            Inquire
                                         </span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Product Info */}
-                            <div className="flex flex-col items-center text-center px-4">
-                                <span className="text-sm text-gray-500 font-medium tracking-wider uppercase mb-2">
+                            <div className="flex flex-col items-center text-center px-1 md:px-4">
+                                <span className="text-[10px] md:text-sm text-gray-500 font-medium tracking-wider uppercase mb-1 md:mb-2 line-clamp-1">
                                     {product.category}
                                 </span>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0E1F74] transition-colors">
+                                <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-[#0E1F74] transition-colors line-clamp-2 md:line-clamp-none min-h-[40px] md:min-h-[56px] flex items-center justify-center">
                                     {product.title}
                                 </h3>
-                                <span className="text-sm font-semibold text-gray-800 border-b border-gray-300 pb-1 inline-block">
+                                <span className="text-xs md:text-sm font-semibold text-gray-800 border-b border-gray-300 pb-1 inline-block">
                                     {product.price}
                                 </span>
                             </div>
@@ -187,7 +190,7 @@ export default function FormalCollection() {
                 </motion.div>
 
                 {/* View More Button */}
-                {formalProducts.length > 6 && (
+                {formalProducts.length > 4 && (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
