@@ -160,7 +160,7 @@ export default function FormalCollection() {
                                 />
 
                                 {/* Hover overlay for tags or actions */}
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <Link href={`/quote?product=${encodeURIComponent(product.title)}&category=${encodeURIComponent(product.category)}`} className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                     <div className="bg-white/90 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-1 md:gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
                                         <ShoppingBag className="w-3 h-3 md:w-4 md:h-4 text-[#0E1F74]" />
                                         <span className="text-[10px] md:text-sm font-semibold text-[#0E1F74] uppercase tracking-wider hidden sm:inline-block">
@@ -170,7 +170,7 @@ export default function FormalCollection() {
                                             Inquire
                                         </span>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
 
                             {/* Product Info */}

@@ -1,12 +1,17 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 import PageHeader from "@/components/layout/PageHeader";
 import { Send, FileText, CheckCircle } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
-export default function QuotePage() {
+function QuoteForm() {
+    const searchParams = useSearchParams();
+    const productParam = searchParams.get('product');
+    const categoryParam = searchParams.get('category');
+
     const [formData, setFormData] = useState({
         name: '',
         organization: '',
@@ -16,6 +21,16 @@ export default function QuotePage() {
         quantity: '',
         details: ''
     });
+
+    useEffect(() => {
+        if (productParam || categoryParam) {
+            setFormData(prev => ({
+                ...prev,
+                uniformType: categoryParam || prev.uniformType,
+                details: productParam ? (prev.details ? prev.details : `Interested in: ${productParam}`) : prev.details
+            }));
+        }
+    }, [productParam, categoryParam]);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState('');
@@ -136,11 +151,14 @@ export default function QuotePage() {
                                     <div>
                                         <label className="block text-sm font-semibold text-gray-700 mb-2">Type of Uniform</label>
                                         <select value={formData.uniformType} onChange={(e) => setFormData({ ...formData, uniformType: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all bg-gray-50 text-gray-900">
-                                            <option>School Uniforms</option>
-                                            <option>Corporate Uniforms</option>
-                                            <option>Hospital Uniforms</option>
-                                            <option>Industrial Uniforms</option>
-                                            <option>Others</option>
+                                            <option value="School Uniforms">School Uniforms</option>
+                                            <option value="Corporate Uniforms">Corporate Uniforms</option>
+                                            <option value="Hospital Uniforms">Hospital Uniforms</option>
+                                            <option value="Industrial Uniforms">Industrial Uniforms</option>
+                                            <option value="Others">Others</option>
+                                            {categoryParam && !['School Uniforms', 'Corporate Uniforms', 'Hospital Uniforms', 'Industrial Uniforms', 'Others'].includes(categoryParam) && (
+                                                <option value={categoryParam}>{categoryParam}</option>
+                                            )}
                                         </select>
                                     </div>
 
@@ -171,5 +189,13 @@ export default function QuotePage() {
                 </div>
             </section>
         </>
+    );
+}
+
+export default function QuotePage() {
+    return (
+        <Suspense fallback={<div className="py-20 text-center">Loading form...</div>}>
+            <QuoteForm />
+        </Suspense>
     );
 }
